@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "GeoSpot",
-  "version": "2.5.0",
+  "version": "2.5.1",
   "description": "Live tester for IP, DNS Leak, and WebRTC Leak status.",
   "permissions": [
     "storage"
@@ -17,10 +17,14 @@
   "background": {
     "scripts": ["background.js"]
   },
+  
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; connect-src http://ip-api.com/ https://ipleak.net/;"
+  },
+
   "browser_specific_settings": {
     "gecko": {
-      "id": "geospot@geekneuron.extension",
-      "strict_min_version": "109.0"
+      "id": "geospot@geekneuron.extension"
     }
   }
 }
