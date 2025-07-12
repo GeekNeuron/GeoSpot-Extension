@@ -7,7 +7,7 @@
 A sleek, modern, and transparent privacy dashboard for your browser. GeoSpot provides an instant, live analysis of your IP address, geolocation, DNS leaks, and WebRTC leaks for both **Chrome** and **Firefox**.
 
 <p align="center">
-  <img src="https://i.imgur.com/4fX7K8i.png" alt="GeoSpot Popup Screenshot" width="400">
+  <img src="screenshot.jpg" alt="GeoSpot Popup Screenshot" width="400">
   <br>
   <em>(Replace this with your own screenshot)</em>
 </p>
