@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GeoSpot IP Location</title>
+    <style>
+        :root {
+            --bg-color: #ffffff; --surface-color: #f1f3f4; --text-color: #202124;
+            --header-color: #1a73e8; --secondary-text-color: #5f6368;
+            --border-color: rgba(255, 255, 255, 0.2);
+            --protected-color: #2ecc71; --leaking-color: #e74c3c;
+        }
+        body.dark-theme {
+            --bg-color: #202124; --surface-color: #3c4043; --text-color: #e8eaed;
+            --header-color: #8ab4f8; --secondary-text-color: #969ba1;
+            --border-color: rgba(255, 255, 255, 0.2);
+        }
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            color: white;
+            width: 352px;
+            height: auto;
+            min-height: 198px;
+            overflow: hidden;
+            background: #2c3e50;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+        .container {
+            width: 100%; height: 100%; display: flex; flex-direction: column;
+            justify-content: center; text-align: center;
+            background: url('images/background.jpg') no-repeat center center;
+            background-size: cover; position: relative;
+            padding: 20px 10px; box-sizing: border-box;
+        }
+        .container::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0, 0, 0, 0.65); z-index: 1;
+        }
+        #location-info, #leak-tests-container, .footer {
+            position: relative; z-index: 2;
+            text-shadow: 1px 1px 6px rgba(0,0,0,0.8);
+        }
+        #ip-address { font-size: 1.8em; font-weight: 600; margin: 0; }
+        #location { font-size: 1.1em; margin-top: 5px; margin-bottom: 15px; }
+        .separator {
+            width: 80%; border: none; height: 1px;
+            background-color: var(--border-color);
+            margin: 15px auto; z-index: 2; opacity: 0.5;
+        }
+        #leak-tests-container {
+            display: flex; justify-content: space-around; align-items: flex-start;
+        }
+        .test-section { flex: 1; padding: 0 10px; }
+        .test-section:first-child { border-right: 1px solid rgba(255, 255, 255, 0.2); }
+        .test-title-container {
+            display: flex; align-items: center; justify-content: center;
+            gap: 6px; margin-bottom: 8px;
+        }
+        .icon-container svg { width: 18px; height: 18px; }
+        .test-section h2 {
+            font-size: 0.85em; font-weight: 500;
+            text-transform: uppercase; letter-spacing: 1px; opacity: 0.9; margin: 0;
+        }
+        .test-section p.status { font-size: 1em; font-weight: bold; margin: 0; }
+        .status.protected { color: var(--protected-color); }
+        .status.leaking { color: var(--leaking-color); }
+        .details-text { font-size: 0.75em; opacity: 0.8; margin-top: 4px !important; word-wrap: break-word; }
+        .footer {
+            padding-top: 15px; width: 100%; text-align: center;
+            font-size: 0.75em; opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="location-info">
+            <h1 id="ip-address">Fetching IP...</h1>
+            <p id="location">...</p>
+        </div>
+        <hr class="separator">
+        <div id="leak-tests-container">
+            <div class="test-section">
+                <div class="test-title-container">
+                    <div id="dns-icon" class="icon-container"></div>
+    <h2>DNS Leak</h2>
+                </div>
+                <p id="leak-status" class="status">Waiting...</p>
+                <p id="dns-details" class="details-text"></p>
+            </div>
+            <div class="test-section">
+                <div class="test-title-container">
+                    <div id="webrtc-icon" class="icon-container"></div>
+    <h2>WebRTC Leak</h2>
+                </div>
+                <p id="webrtc-status" class="status">Waiting...</p>
+                <p id="webrtc-details" class="details-text"></p>
+            </div>
+        </div>
+        <div class="footer">Created with ❤️ by GeekNeuron</div>
+    </div>
+    <script src="popup.js"></script>
+</body>
+</html>
