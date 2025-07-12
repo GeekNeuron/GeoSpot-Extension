@@ -83,7 +83,13 @@ document.addEventListener('DOMContentLoaded', () => {
             peerConnection.onicecandidate = (event) => {
                 if (event.candidate && event.candidate.candidate) {
                     const matches = event.candidate.candidate.match(ipRegex);
-                    if (matches) { matches.forEach(ip => { if (!ip.startsWith('192.168.') && !ip.startsWith('10.') && !ip.startsWith('172.')) { foundIps.add(ip); } }); }
+                    if (matches) { 
+                        matches.forEach(ip => {
+                            if (ip !== '0.0.0.0' && !ip.startsWith('192.168.') && !ip.startsWith('10.') && !ip.startsWith('172.')) { 
+                                foundIps.add(ip); 
+                            } 
+                        }); 
+                    }
                 }
             };
             peerConnection.createDataChannel('');
