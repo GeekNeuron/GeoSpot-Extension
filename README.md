@@ -30,19 +30,19 @@ You can load this extension in developer mode in your browser of choice.
 
 ### For Google Chrome
 
-1.  **Download:** Download or clone the repository and find the `GeoSpot-Chrome` folder.
+1.  **Download:** Download or clone the repository and find the `chrome` folder.
 2.  **Open Chrome Extensions:** Open Google Chrome and navigate to `chrome://extensions`.
 3.  **Enable Developer Mode:** In the top right corner, toggle on "Developer mode".
 4.  **Load Unpacked:** Click the "Load unpacked" button.
-5.  **Select Folder:** Select the `GeoSpot-Chrome` folder.
+5.  **Select Folder:** Select the `chrome` folder.
 
 ### For Mozilla Firefox
 
-1.  **Download:** Download or clone the repository and find the `GeoSpot-Firefox` folder.
+1.  **Download:** Download or clone the repository and find the `firefox` folder.
 2.  **Open Firefox Debugging:** Open Firefox and navigate to `about:debugging`.
 3.  **Select "This Firefox":** Click on the "This Firefox" tab on the left.
 4.  **Load Temporary Add-on:** Click the "Load Temporary Add-on..." button.
-5.  **Select File:** Navigate into the `GeoSpot-Firefox` folder and select the `manifest.json` file.
+5.  **Select File:** Navigate into the `firefox` folder and select the `manifest.json` file.
 
 ---
 
