@@ -8,8 +8,6 @@ A sleek, modern, and transparent privacy dashboard for your browser. GeoSpot pro
 
 <p align="center">
   <img src="screenshot.jpg" alt="GeoSpot Popup Screenshot" width="400">
-  <br>
-  <em>(Replace this with your own screenshot)</em>
 </p>
 
 ---
